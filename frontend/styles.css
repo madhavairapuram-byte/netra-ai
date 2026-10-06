@@ -1,0 +1,2681 @@
+/* =========================================================
+   NETRA AI
+   Complete stylesheet
+   ========================================================= */
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #f7f9fc;
+  background: #050a12;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #050a12;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding:
+    20px
+    30px;
+
+  pointer-events: none;
+}
+
+.brand-block,
+.author-block {
+  pointer-events: auto;
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 0;
+
+  font-size: 1.65rem;
+
+  letter-spacing: -0.03em;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+p {
+  color: #d1d9e7;
+  line-height: 1.55;
+}
+
+.eyebrow {
+  color: #a8c7e8;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  margin-bottom: 6px;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.author-block {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 5px;
+}
+
+.author-name {
+  color: #d4deeb;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.pill {
+  padding:
+    7px
+    11px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(5, 12, 22, 0.65);
+
+  border:
+    1px solid
+    rgba(190, 220, 255, 0.22);
+
+  color: #dceaff;
+
+  font-size: 0.76rem;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   SCREEN MANAGEMENT
+   ========================================================= */
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* =========================================================
+   HOME SCREEN
+   ========================================================= */
+
+.home-screen {
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(2, 7, 15, 0.28),
+      rgba(2, 7, 15, 0.48)
+    ),
+    url("/eye-background.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+.home-screen.active {
+  display: flex;
+}
+
+.home-screen::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(0, 160, 210, 0.08),
+      transparent 38%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =========================================================
+   HOME HERO
+   ========================================================= */
+
+.hero-card {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      900px,
+      90vw
+    );
+
+  margin: 0 auto;
+
+  padding:
+    40px
+    30px;
+
+  text-align: center;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+}
+
+.eye-mark {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    0
+    auto
+    20px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(4, 16, 28, 0.55);
+
+  border:
+    1px solid
+    rgba(160, 220, 255, 0.4);
+
+  color: #d9f5ff;
+
+  font-size: 1.8rem;
+
+  box-shadow:
+    0 0 30px
+    rgba(42, 177, 220, 0.18),
+    0 10px 35px
+    rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(8px);
+}
+
+.hero-card h2 {
+  margin:
+    0
+    auto
+    18px;
+
+  max-width: 1000px;
+
+  font-size:
+    clamp(
+      2.8rem,
+      7vw,
+      6.2rem
+    );
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ffffff,
+      #d8f5ff,
+      #69d9f5,
+      #ffffff,
+      #91cde5
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+
+  filter:
+    drop-shadow(
+      0 5px 14px
+      rgba(0, 0, 0, 0.75)
+    )
+    drop-shadow(
+      0 0 25px
+      rgba(53, 188, 222, 0.18)
+    );
+}
+
+.hero-card h2::after {
+  content: "";
+
+  display: block;
+
+  width:
+    min(
+      420px,
+      60vw
+    );
+
+  height: 2px;
+
+  margin:
+    22px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(120, 225, 250, 0.85),
+      transparent
+    );
+}
+
+.hero-card p {
+  width:
+    min(
+      620px,
+      88vw
+    );
+
+  margin:
+    0
+    auto
+    30px;
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.5vw,
+      1.2rem
+    );
+
+  line-height: 1.65;
+
+  color:
+    rgba(
+      239,
+      247,
+      255,
+      0.9
+    );
+
+  text-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.9);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary,
+.secondary {
+  border: 0;
+
+  cursor: pointer;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.primary {
+  position: relative;
+
+  min-width: 230px;
+
+  padding:
+    16px
+    32px;
+
+  border-radius: 999px;
+
+  color: #031019;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e7fbff,
+      #79ddf4,
+      #c7f4ff
+    );
+
+  font-size: 1rem;
+
+  letter-spacing: 0.04em;
+
+  box-shadow:
+    0 8px 30px
+    rgba(36, 181, 220, 0.28);
+}
+
+.primary:hover {
+  transform:
+    translateY(-3px)
+    scale(1.025);
+
+  filter: brightness(1.08);
+}
+
+.primary:active {
+  transform:
+    translateY(0)
+    scale(0.98);
+}
+
+.secondary {
+  width: 100%;
+
+  border-radius: 16px;
+
+  padding:
+    14px
+    18px;
+
+  color: #d9e2f1;
+
+  background: #141e31;
+
+  border:
+    1px solid
+    #283650;
+}
+
+.secondary:hover {
+  filter: brightness(1.08);
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================================
+   HOME DISCLAIMER
+   ========================================================= */
+
+.info-card {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+
+  bottom: 18px;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    min(
+      1100px,
+      calc(100vw - 40px)
+    );
+
+  padding:
+    0
+    15px;
+
+  text-align: center;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+
+  pointer-events: none;
+}
+
+.info-card strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.9);
+}
+
+.info-card p {
+  max-width: 1050px;
+
+  margin:
+    0
+    auto;
+
+  color:
+    rgba(
+      235,
+      242,
+      250,
+      0.62
+    );
+
+  font-size: 0.62rem;
+
+  line-height: 1.35;
+
+  text-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.95);
+}
+
+/* =========================================================
+   CAPTURE / UPLOAD SCREEN
+   ========================================================= */
+
+#capture-screen {
+  position: relative;
+
+  width: 100vw;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    #07101b;
+}
+
+#capture-screen::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -2;
+
+  inset: -35px;
+
+  background-image:
+    url("/eye-background.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  filter:
+    blur(7px);
+
+  transform:
+    scale(1.06);
+
+  opacity: 0.68;
+}
+
+#capture-screen::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 10, 20, 0.86),
+      rgba(4, 13, 25, 0.62),
+      rgba(3, 10, 20, 0.86)
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(30, 157, 197, 0.13),
+      transparent 55%
+    );
+}
+
+/* =========================================================
+   CAPTURE SCREEN POSITIONING
+   ========================================================= */
+
+#capture-screen.active {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  min-height: 100vh;
+
+  padding:
+    125px
+    25px
+    55px;
+}
+
+/*
+   This row contains the heading and the upload area.
+   Everything is now stacked vertically and centred.
+*/
+
+#capture-screen .progress-row {
+  width:
+    min(
+      850px,
+      92vw
+    );
+
+  margin:
+    80px
+    auto
+    0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 22px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   CAPTURE HEADING
+   ========================================================= */
+
+#capture-screen .progress-row > div:first-child {
+  width: 100%;
+
+  text-align: center;
+}
+
+#capture-screen .eyebrow {
+  margin-bottom: 10px;
+
+  color:
+    #a9d9f6;
+
+  font-size: 0.76rem;
+
+  font-weight: 850;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 2px 14px
+    rgba(0, 0, 0, 0.95);
+}
+
+/*
+   Main heading:
+   UPLOAD YOUR EYE IMAGE
+*/
+
+#capture-screen .progress-row h2 {
+  margin:
+    0
+    auto;
+
+  font-size:
+    clamp(
+      2.4rem,
+      5vw,
+      4.4rem
+    );
+
+  line-height: 1;
+
+  font-weight: 950;
+
+  letter-spacing: 0.055em;
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #d9f7ff 28%,
+      #6ed7f3 50%,
+      #ffffff 73%,
+      #8bbbd7 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+
+  filter:
+    drop-shadow(
+      0 5px 15px
+      rgba(0, 0, 0, 0.8)
+    )
+    drop-shadow(
+      0 0 24px
+      rgba(71, 194, 228, 0.18)
+    );
+}
+
+#capture-screen .progress-row h2::after {
+  content: "";
+
+  display: block;
+
+  width:
+    min(
+      310px,
+      55vw
+    );
+
+  height: 2px;
+
+  margin:
+    17px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(114, 219, 244, 0.9),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(87, 205, 235, 0.22);
+}
+
+/* =========================================================
+   UPLOAD CARD
+   ========================================================= */
+
+.capture-card {
+  width:
+    min(
+      760px,
+      90vw
+    );
+
+  margin:
+    0
+    auto;
+
+  padding:
+    22px;
+
+  text-align: center;
+
+  background:
+    rgba(
+      7,
+      17,
+      30,
+      0.74
+    );
+
+  border:
+    1px solid
+    rgba(
+      157,
+      199,
+      230,
+      0.24
+    );
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 25px 75px
+    rgba(0, 0, 0, 0.4);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+}
+
+/* =========================================================
+   EYE GUIDE
+   ========================================================= */
+
+.camera-guide {
+  min-height: 300px;
+
+  display: grid;
+
+  place-items: center;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(27, 83, 111, 0.18),
+      rgba(3, 12, 23, 0.88) 70%
+    );
+
+  border:
+    1px solid
+    rgba(
+      135,
+      184,
+      218,
+      0.25
+    );
+
+  border-radius: 22px;
+
+  padding:
+    35px;
+
+  margin-bottom: 17px;
+
+  overflow: hidden;
+}
+
+.camera-guide::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(58, 180, 218, 0.1),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.guide-ring {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      390px,
+      65vw
+    );
+
+  height:
+    min(
+      190px,
+      33vw
+    );
+
+  border:
+    3px solid
+    rgba(
+      159,
+      202,
+      246,
+      0.85
+    );
+
+  border-radius:
+    50%
+    50%
+    48%
+    52%;
+
+  opacity: 0.9;
+
+  box-shadow:
+    0 0 28px
+    rgba(99, 190, 237, 0.18),
+    inset 0 0 28px
+    rgba(99, 190, 237, 0.05);
+}
+
+.camera-guide p {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 25px;
+  right: 25px;
+
+  bottom: 13px;
+
+  margin: 0;
+
+  color:
+    rgba(
+      229,
+      240,
+      249,
+      0.86
+    );
+
+  font-size: 0.88rem;
+
+  line-height: 1.45;
+
+  text-align: center;
+}
+
+/* =========================================================
+   FILE UPLOAD
+   ========================================================= */
+
+/*
+   The native filename text is hidden by making the input text
+   transparent/zero-sized.
+
+   The actual file input is still there, so app.js continues
+   to receive the selected image normally.
+*/
+
+#capture-screen input[type="file"] {
+  display: inline-block;
+
+  width: auto;
+
+  min-width: 0;
+
+  height: auto;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: transparent;
+
+  font-size: 0;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+/*
+   Attractive custom-looking native file button.
+*/
+
+#capture-screen input[type="file"]::file-selector-button {
+  margin: 0;
+
+  padding:
+    14px
+    27px;
+
+  border:
+    1px solid
+    rgba(
+      151,
+      224,
+      247,
+      0.55
+    );
+
+  border-radius: 999px;
+
+  color:
+    #04121b;
+
+  background:
+    linear-gradient(
+      135deg,
+      #effcff,
+      #83dff4,
+      #b9effc
+    );
+
+  font-size: 0.9rem;
+
+  font-weight: 850;
+
+  letter-spacing: 0.045em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 28px
+    rgba(
+      48,
+      190,
+      224,
+      0.22
+    );
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#capture-screen input[type="file"]::file-selector-button:hover {
+  filter: brightness(1.08);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 11px 32px
+    rgba(
+      48,
+      190,
+      224,
+      0.32
+    );
+}
+
+#capture-screen input[type="file"]::file-selector-button:active {
+  transform:
+    translateY(0)
+    scale(0.98);
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+  min-height: 24px;
+
+  margin-top: 14px;
+
+  color:
+    #a9c7df;
+
+  font-size: 0.86rem;
+
+  text-align: center;
+}
+
+/* =========================================================
+   RESULT SCREEN
+   ========================================================= */
+
+#result-screen {
+  position: relative;
+
+  width: 100vw;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    #050a12;
+
+  transition:
+    background 0.7s ease;
+}
+
+#result-screen::before {
+  content: "";
+
+  position: fixed;
+
+  z-index: -3;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(47, 152, 190, 0.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #030810,
+      #091422 50%,
+      #030810
+    );
+
+  transition:
+    background 0.8s ease;
+}
+
+#result-screen:has(.result-high)::before {
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(255, 58, 58, 0.24),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(183, 28, 28, 0.18),
+      transparent 52%
+    ),
+    linear-gradient(
+      135deg,
+      #180508,
+      #2b0a0d 48%,
+      #090306
+    );
+}
+
+#result-screen:has(.result-medium)::before {
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(255, 171, 45, 0.25),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(206, 112, 15, 0.17),
+      transparent 52%
+    ),
+    linear-gradient(
+      135deg,
+      #171004,
+      #2a1a08 48%,
+      #080603
+    );
+}
+
+#result-screen:has(.result-low)::before {
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(48, 205, 125, 0.2),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(27, 139, 78, 0.15),
+      transparent 52%
+    ),
+    linear-gradient(
+      135deg,
+      #03130c,
+      #071e14 48%,
+      #020907
+    );
+}
+
+#result-screen::after {
+  content: "";
+
+  position: fixed;
+
+  z-index: -2;
+
+  inset: 0;
+
+  opacity: 0.4;
+
+  background:
+    repeating-radial-gradient(
+      circle at 50% 39%,
+      transparent 0,
+      transparent 95px,
+      rgba(115, 205, 230, 0.035) 97px,
+      transparent 100px
+    );
+
+  animation:
+    background-pulse
+    10s
+    ease-in-out
+    infinite;
+
+  pointer-events: none;
+}
+
+#result-screen:has(.result-high)::after {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 39%,
+      transparent 0,
+      transparent 95px,
+      rgba(255, 85, 85, 0.045) 97px,
+      transparent 100px
+    );
+}
+
+#result-screen:has(.result-medium)::after {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 39%,
+      transparent 0,
+      transparent 95px,
+      rgba(255, 180, 55, 0.045) 97px,
+      transparent 100px
+    );
+}
+
+#result-screen:has(.result-low)::after {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 39%,
+      transparent 0,
+      transparent 95px,
+      rgba(65, 220, 135, 0.045) 97px,
+      transparent 100px
+    );
+}
+
+@keyframes background-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.28;
+  }
+
+  50% {
+    transform: scale(1.025);
+    opacity: 0.48;
+  }
+}
+
+#result-screen.active {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  padding:
+    125px
+    25px
+    55px;
+}
+
+/* =========================================================
+   RESULT CARD
+   ========================================================= */
+
+.result-card {
+  position: relative;
+
+  width:
+    min(
+      780px,
+      82vw
+    );
+
+  min-height: 410px;
+
+  margin: 0 auto;
+
+  padding:
+    42px
+    55px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius: 32px;
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.48),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  transition:
+    background 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease,
+    transform 0.25s ease;
+}
+
+.result-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -80px;
+  left: -80px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.09),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.result-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+
+  width: 70%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.24),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   RESULT COLOURS
+   ========================================================= */
+
+.result-high {
+  border-color:
+    rgba(
+      255,
+      86,
+      86,
+      0.65
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(100, 18, 24, 0.91),
+      rgba(48, 9, 13, 0.94)
+    );
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.55),
+    0 0 80px
+    rgba(215, 45, 45, 0.13),
+    inset 0 1px 0
+    rgba(255, 125, 125, 0.12);
+}
+
+.result-medium {
+  border-color:
+    rgba(
+      255,
+      181,
+      64,
+      0.62
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(89, 54, 12, 0.91),
+      rgba(47, 27, 5, 0.94)
+    );
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.5),
+    0 0 80px
+    rgba(230, 142, 30, 0.12),
+    inset 0 1px 0
+    rgba(255, 204, 110, 0.12);
+}
+
+.result-low {
+  border-color:
+    rgba(
+      67,
+      210,
+      133,
+      0.58
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 72, 43, 0.91),
+      rgba(5, 35, 22, 0.94)
+    );
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.5),
+    0 0 80px
+    rgba(35, 194, 111, 0.1),
+    inset 0 1px 0
+    rgba(120, 255, 174, 0.1);
+}
+
+/* =========================================================
+   RESULT ICON
+   ========================================================= */
+
+.result-icon {
+  width: 96px;
+  height: 96px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    5px
+    auto
+    23px;
+
+  border-radius: 50%;
+
+  font-size: 3.4rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.result-low .result-icon {
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #65dfa0,
+      #24975e 65%,
+      #177044
+    );
+
+  box-shadow:
+    0 0 0 9px
+    rgba(46, 157, 99, 0.12),
+    0 0 50px
+    rgba(46, 157, 99, 0.3);
+}
+
+.result-medium .result-icon {
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffc96f,
+      #d28a25 65%,
+      #a86413
+    );
+
+  box-shadow:
+    0 0 0 9px
+    rgba(210, 138, 37, 0.13),
+    0 0 50px
+    rgba(210, 138, 37, 0.3);
+}
+
+.result-high .result-icon {
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ff7b7b,
+      #d13b3b 65%,
+      #9e2525
+    );
+
+  box-shadow:
+    0 0 0 9px
+    rgba(209, 59, 59, 0.14),
+    0 0 50px
+    rgba(209, 59, 59, 0.34);
+}
+
+/* =========================================================
+   RESULT TEXT
+   ========================================================= */
+
+.result-card h2 {
+  position: relative;
+
+  z-index: 2;
+
+  margin-bottom: 14px;
+
+  max-width: 650px;
+
+  font-size:
+    clamp(
+      2rem,
+      3.5vw,
+      3rem
+    );
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+}
+
+.result-high h2 {
+  color: #ff8585;
+}
+
+.result-medium h2 {
+  color: #ffc56d;
+}
+
+.result-low h2 {
+  color: #78e2a7;
+}
+
+.result-card > p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 620px;
+
+  margin:
+    0
+    auto;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  color: #d9e2ed;
+}
+
+/* =========================================================
+   CONFIDENCE
+   ========================================================= */
+
+.confidence {
+  display: none !important;
+}
+
+/* =========================================================
+   DISEASE INFORMATION
+   ========================================================= */
+
+.disease-info {
+  position: relative;
+
+  width:
+    min(
+      780px,
+      82vw
+    );
+
+  height: 175px;
+
+  margin:
+    16px
+    auto
+    0;
+
+  padding:
+    18px
+    28px;
+
+  overflow: hidden;
+
+  text-align: left;
+
+  background:
+    rgba(
+      8,
+      16,
+      28,
+      0.78
+    );
+
+  border:
+    1px solid
+    rgba(
+      98,
+      143,
+      178,
+      0.34
+    );
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.25);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 17%,
+      black 83%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 17%,
+      black 83%,
+      transparent 100%
+    );
+}
+
+.disease-info h3 {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 15px;
+
+  left: 28px;
+
+  right: 28px;
+
+  margin: 0;
+
+  color: #eef7ff;
+
+  font-size: 0.92rem;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 16, 28, 0.98),
+      rgba(8, 16, 28, 0.72),
+      transparent
+    );
+
+  padding-bottom: 12px;
+}
+
+.disease-info .disease-section {
+  position: absolute;
+
+  left: 28px;
+
+  right: 28px;
+
+  padding:
+    0
+    0
+    15px;
+
+  border: 0;
+
+  opacity: 0;
+
+  animation:
+    aquarium-slide
+    18s
+    linear
+    infinite;
+}
+
+.disease-info .disease-section:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.disease-info .disease-section:nth-of-type(2) {
+  animation-delay: 6s;
+}
+
+.disease-info .disease-section:nth-of-type(3) {
+  animation-delay: 12s;
+}
+
+.disease-info .disease-section strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9fc9e8;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+.disease-info .disease-section p {
+  margin: 0;
+
+  color: #cbd8e8;
+
+  font-size: 0.88rem;
+
+  line-height: 1.48;
+}
+
+@keyframes aquarium-slide {
+
+  0% {
+    opacity: 0;
+    transform: translateY(145px);
+  }
+
+  8% {
+    opacity: 0;
+    transform: translateY(105px);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translateY(65px);
+  }
+
+  38% {
+    opacity: 1;
+    transform: translateY(15px);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateY(-90px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+}
+
+/* =========================================================
+   NEW SCREENING BUTTON
+   ========================================================= */
+
+#new-screening,
+#new-screening-button {
+  width:
+    min(
+      780px,
+      82vw
+    );
+
+  min-height: 50px;
+
+  margin:
+    12px
+    auto
+    0;
+
+  padding:
+    13px
+    20px;
+
+  border-radius: 15px;
+
+  border:
+    1px solid
+    rgba(
+      112,
+      159,
+      198,
+      0.3
+    );
+
+  color: #e3edf8;
+
+  background:
+    rgba(
+      19,
+      32,
+      51,
+      0.88
+    );
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#new-screening:hover,
+#new-screening-button:hover {
+  background:
+    rgba(
+      29,
+      51,
+      78,
+      0.96
+    );
+
+  border-color:
+    rgba(
+      120,
+      201,
+      233,
+      0.55
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   MEDICAL SAFETY
+   ========================================================= */
+
+#result-screen > .medical-card {
+  width:
+    min(
+      1000px,
+      calc(100vw - 50px)
+    );
+
+  margin:
+    17px
+    auto
+    0;
+
+  padding:
+    0
+    12px;
+
+  text-align: center;
+
+  background: transparent;
+
+  border: 0;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  opacity: 0.68;
+}
+
+#result-screen > .medical-card strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    rgba(
+      235,
+      243,
+      250,
+      0.72
+    );
+
+  font-size: 0.63rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+#result-screen > .medical-card p {
+  max-width: 950px;
+
+  margin:
+    0
+    auto;
+
+  color:
+    rgba(
+      220,
+      231,
+      242,
+      0.58
+    );
+
+  font-size: 0.6rem;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .topbar {
+    padding:
+      17px
+      18px;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  .author-name {
+    font-size: 0.68rem;
+  }
+
+  /* CAPTURE */
+
+  #capture-screen.active {
+    padding:
+      105px
+      15px
+      35px;
+  }
+
+  #capture-screen .progress-row {
+    width: 94vw;
+
+    margin-top: 25px;
+
+    gap: 18px;
+  }
+
+  #capture-screen .progress-row h2 {
+    font-size: 2.35rem;
+  }
+
+  .capture-card {
+    width: 94vw;
+
+    padding:
+      20px
+      17px;
+
+    border-radius: 23px;
+  }
+
+  .camera-guide {
+    min-height: 255px;
+  }
+
+  /* RESULT */
+
+  #result-screen.active {
+    padding:
+      105px
+      15px
+      35px;
+  }
+
+  .result-card {
+    width: 94vw;
+
+    min-height: 380px;
+
+    padding:
+      35px
+      25px;
+  }
+
+  .disease-info {
+    width: 94vw;
+
+    height: 180px;
+  }
+
+  #new-screening,
+  #new-screening-button {
+    width: 94vw;
+  }
+
+  #result-screen > .medical-card {
+    width:
+      calc(
+        100vw - 30px
+      );
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .topbar {
+    padding:
+      14px
+      12px;
+  }
+
+  .eyebrow {
+    font-size: 0.58rem;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+  }
+
+  .author-name {
+    font-size: 0.6rem;
+  }
+
+  /* HOME */
+
+  .hero-card {
+    width: 94vw;
+
+    padding:
+      25px
+      12px
+      80px;
+  }
+
+  .hero-card h2 {
+    font-size: 2.15rem;
+
+    letter-spacing: 0.035em;
+  }
+
+  .hero-card p {
+    font-size: 0.82rem;
+  }
+
+  .primary {
+    min-width: 190px;
+
+    padding:
+      13px
+      22px;
+
+    font-size: 0.9rem;
+  }
+
+  /* CAPTURE */
+
+  #capture-screen.active {
+    padding:
+      90px
+      10px
+      25px;
+  }
+
+  #capture-screen .progress-row {
+    width: 96vw;
+
+    margin-top: 20px;
+
+    gap: 16px;
+  }
+
+  #capture-screen .eyebrow {
+    font-size: 0.62rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  #capture-screen .progress-row h2 {
+    font-size: 1.95rem;
+
+    letter-spacing: 0.035em;
+  }
+
+  .capture-card {
+    width: 96vw;
+
+    padding:
+      14px;
+
+    border-radius: 20px;
+  }
+
+  .camera-guide {
+    min-height: 235px;
+
+    padding: 25px;
+  }
+
+  .guide-ring {
+    width: 220px;
+
+    height: 110px;
+  }
+
+  .camera-guide p {
+    font-size: 0.76rem;
+  }
+
+  #capture-screen input[type="file"]::file-selector-button {
+    padding:
+      13px
+      22px;
+
+    font-size: 0.78rem;
+  }
+
+  /* RESULT */
+
+  #result-screen.active {
+    padding:
+      95px
+      10px
+      25px;
+  }
+
+  .result-card {
+    width: 95vw;
+
+    min-height: 350px;
+
+    padding:
+      32px
+      17px;
+  }
+
+  .result-icon {
+    width: 78px;
+    height: 78px;
+
+    font-size: 2.8rem;
+  }
+
+  .result-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .result-card > p {
+    font-size: 0.9rem;
+  }
+
+  .disease-info {
+    width: 95vw;
+
+    height: 180px;
+
+    padding:
+      17px
+      20px;
+  }
+
+  .disease-info h3 {
+    left: 20px;
+    right: 20px;
+
+    font-size: 0.85rem;
+  }
+
+  .disease-info .disease-section {
+    left: 20px;
+    right: 20px;
+  }
+
+  .disease-info .disease-section strong {
+    font-size: 0.72rem;
+  }
+
+  .disease-info .disease-section p {
+    font-size: 0.82rem;
+  }
+
+  #new-screening,
+  #new-screening-button {
+    width: 95vw;
+  }
+
+  #result-screen > .medical-card {
+    width: 95vw;
+
+    margin-top: 13px;
+  }
+
+  #result-screen > .medical-card strong {
+    font-size: 0.56rem;
+  }
+
+  #result-screen > .medical-card p {
+    font-size: 0.52rem;
+  }
+}
+
+/* =========================================================
+   FINAL CAPTURE SCREEN ADJUSTMENTS
+   ========================================================= */
+
+/*
+   FINAL LAYOUT:
+   - The upload heading is centred near the top of the page.
+   - The Choose File button sits directly below the heading.
+   - The old eye-guide/ellipse box is completely hidden.
+   - The image-quality guidance remains at the bottom.
+*/
+
+/* Keep the upload screen as the positioning reference. */
+#capture-screen.active {
+  position: relative;
+}
+
+/* Centre the complete heading at the top. */
+#capture-screen .progress-row {
+  position: static;
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+/* Centre the heading block. */
+#capture-screen .progress-row > div:first-child {
+  position: absolute;
+  top: clamp(125px, 17vh, 165px);
+  left: 50%;
+  width: min(1000px, 92vw);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Small heading above the main title. */
+#capture-screen .eyebrow {
+  margin-bottom: 9px;
+  color: #a9d9f6;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+}
+
+/* Main heading: UPLOAD YOUR EYE IMAGE */
+#capture-screen .progress-row h2 {
+  margin: 0 auto;
+  max-width: 820px;
+  font-size: clamp(2.15rem, 4.4vw, 3.8rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #d9f7ff 28%,
+      #6ed7f3 50%,
+      #ffffff 73%,
+      #8bbbd7 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  filter:
+    drop-shadow(0 5px 15px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 24px rgba(71, 194, 228, 0.18));
+}
+
+/* Decorative line below the main heading. */
+#capture-screen .progress-row h2::after {
+  content: "";
+  display: block;
+  width: min(310px, 55vw);
+  height: 2px;
+  margin: 17px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(114, 219, 244, 0.9),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(87, 205, 235, 0.22);
+}
+
+/* Completely remove the old eye/ellipse guide. */
+#capture-screen .camera-guide {
+  display: none !important;
+}
+
+/*
+   Remove the upload-card appearance and position the file
+   control directly below the central heading.
+*/
+#capture-screen .capture-card {
+  position: absolute;
+  top: clamp(355px, 46vh, 425px);
+  left: 50%;
+
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+
+  transform: translateX(-50%);
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  text-align: center;
+}
+
+/* Keep only the actual file control. */
+#capture-screen input[type="file"] {
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: transparent;
+
+  font-size: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Attractive Choose File button. */
+#capture-screen input[type="file"]::file-selector-button {
+  margin: 0;
+  padding: 13px 28px;
+
+  border: 1px solid rgba(151, 224, 247, 0.55);
+  border-radius: 999px;
+
+  color: #04121b;
+
+  background:
+    linear-gradient(
+      135deg,
+      #effcff,
+      #83dff4,
+      #b9effc
+    );
+
+  font-size: 0.88rem;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 28px rgba(48, 190, 224, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#capture-screen input[type="file"]::file-selector-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 32px rgba(48, 190, 224, 0.32);
+}
+
+#capture-screen input[type="file"]::file-selector-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Keep the image-quality disclaimer at the bottom. */
+#capture-screen .info-card {
+  position: absolute;
+  z-index: 10;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(1100px, calc(100vw - 40px));
+  padding: 0 15px;
+  margin: 0;
+
+  text-align: center;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+#capture-screen .info-card strong {
+  display: block;
+  margin-bottom: 3px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.9);
+}
+
+#capture-screen .info-card p {
+  max-width: 1050px;
+  margin: 0 auto;
+
+  color: rgba(235, 242, 250, 0.62);
+
+  font-size: 0.62rem;
+  line-height: 1.45;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.95);
+}
+
+/* Add the eye-position/light/focus instruction to the same disclaimer. */
+#capture-screen .info-card p::after {
+  content:
+    " Keep the eye centred, use good lighting, avoid glare and make sure the image is in focus.";
+}
+
+/* Do not reserve space for an extra status line. */
+#capture-screen .status {
+  min-height: 0;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE CAPTURE SCREEN
+   ========================================================= */
+
+@media (max-width: 760px) {
+  #capture-screen.active {
+    padding:
+      100px
+      15px
+      35px;
+  }
+
+  #capture-screen .progress-row > div:first-child {
+    top: 125px;
+    width: 94vw;
+  }
+
+  #capture-screen .progress-row h2 {
+    font-size: 2.15rem;
+  }
+
+  #capture-screen .capture-card {
+    top: 350px;
+  }
+
+  #capture-screen .info-card {
+    width: 94vw;
+  }
+}
+
+@media (max-width: 430px) {
+  #capture-screen.active {
+    padding:
+      90px
+      10px
+      25px;
+  }
+
+  #capture-screen .progress-row > div:first-child {
+    top: 115px;
+    width: 94vw;
+  }
+
+  #capture-screen .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
+
+  #capture-screen .progress-row h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.035em;
+  }
+
+  #capture-screen .capture-card {
+    top: 315px;
+  }
+
+  #capture-screen input[type="file"]::file-selector-button {
+    padding: 12px 23px;
+    font-size: 0.76rem;
+  }
+
+  #capture-screen .info-card {
+    width: 95vw;
+    bottom: 13px;
+  }
+
+  #capture-screen .info-card strong {
+    font-size: 0.56rem;
+  }
+
+  #capture-screen .info-card p {
+    font-size: 0.52rem;
+  }
+}

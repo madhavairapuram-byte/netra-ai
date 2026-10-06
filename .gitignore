@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+data/
+reports/
+
+.DS_Store
+Thumbs.db
+
+# Old model versions
+models/conjunctivitis_efficientnet_b0.pth
+models/conjunctivitis_efficientnet_b0_clean.pth
+models/conjunctivitis_efficientnet_b0_v3.pth
+models/conjunctivitis_efficientnet_b0_v5.pth
+models/conjunctivitis_efficientnet_b0_v4.pth
+models/conjunctivitis_efficientnet_b0_v4_augmented_normal.pth
+models/eyecheck_multiclass_efficientnet_b0_v1.pth

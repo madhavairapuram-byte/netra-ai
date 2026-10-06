@@ -1,0 +1,11 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9,<1
+numpy>=2.0,<3
+opencv-python>=4.10,<5
+Pillow>=10,<13
+pydantic>=2.7,<3
+# Training extras
+scikit-learn>=1.5,<2
+torch>=2.4,<3
+torchvision>=0.19,<1
